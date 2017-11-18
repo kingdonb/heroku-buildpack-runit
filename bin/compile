@@ -26,16 +26,16 @@ install() {
 
 install http://mirrors.kernel.org/ubuntu/pool/universe/r/runit/runit_2.1.1-6.2ubuntu3_amd64.deb
 
-mkdir -p /etc/sv/runsvdir-slug
-cat > /etc/sv/runsvdir-slug/run <<EOF
-#!/bin/sh
-exec 2>&1
-exec chpst -uslug runsvdir $HOME/.service.web
-EOF
-chmod +x /etc/sv/runsvdir-slug/run
+# mkdir -p /etc/sv/runsvdir-slug
+# cat > /etc/sv/runsvdir-slug/run <<EOF
+# #!/bin/sh
+# exec 2>&1
+# exec chpst -uslug runsvdir $HOME/.service.web
+# EOF
+# chmod +x /etc/sv/runsvdir-slug/run
 
-chown root $SW_DIR/sbin/runit
-chmod u+s $SW_DIR/sbin/runit
+ # chown root $SW_DIR/sbin/runit
+ # chmod u+s $SW_DIR/sbin/runit
 
 mkdir -p .profile.d
 cat > .profile.d/runit.sh <<EOF
